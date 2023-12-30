@@ -6,10 +6,10 @@ services:
       context: docker/web
       dockerfile: Dockerfile
     ports:
-      - 80:8000
-    #command: cd /web && php artisan serve
+      - 80:3000
+    command: sh -c "npm run dev"
     env_file:
       - docker/web/.env
     volumes:
-      - ./web:/web
+      - ./web:/app
     tty: true
