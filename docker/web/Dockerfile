@@ -6,3 +6,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv /composer.phar /usr/local/bin/composer
+
+# install php package 
+RUN apt update -y
+RUN apt install -y curl git unzip
+#RUN apt install -y php-xml
+#RUN apt install -y php-curl

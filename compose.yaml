@@ -5,5 +5,11 @@ services:
     build:
       context: docker/web
       dockerfile: Dockerfile
-    
+    ports:
+      - 80:8000
+    #command: cd /web && php artisan serve
+    env_file:
+      - docker/web/.env
+    volumes:
+      - ./web:/web
     tty: true
